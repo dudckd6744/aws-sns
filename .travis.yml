@@ -22,3 +22,15 @@ after_success:
   - docker push dudckd/sns-server
   - docker push dudckd/sns-nginx
 
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-northeast-2"
+  app: "sns-docker-aws"
+  env: "Snsdockeraws-env"
+  bucket_name: "elasticbeanstalk-ap-northeast-2-840213432037"
+  bucket_path: "sns-docker-aws"
+  on:
+    branch: main
+  
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
