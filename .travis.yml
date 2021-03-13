@@ -1,0 +1,12 @@
+lauguage: generic
+
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t dudckd/docker-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true dudcke/docker-test npm run test
