@@ -22,4 +22,4 @@ after_success:
   - docker push dudckd/sns-server
   - docker push dudckd/sns-nginx
 
-  - echo "success deploy"
+  - echo "success deply"
