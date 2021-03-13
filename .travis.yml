@@ -23,8 +23,8 @@ after_success:
   - docker push dudckd/sns-nginx
 
 deploy:
-  timeout: 30
   edge: true
+  timeout: 30 
   provider: elasticbeanstalk
   region: "ap-northeast-2"
   app: "sns-docker-aws"
