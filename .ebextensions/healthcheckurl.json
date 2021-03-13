@@ -1,0 +1,7 @@
+[
+    {
+    "Namespace": "aws:elasticbeanstalk:application",
+    "OptionName": "Timeout",
+    "Value": "1800"
+    }
+]
