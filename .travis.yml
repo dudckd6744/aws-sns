@@ -18,8 +18,8 @@ after_success:
 
   - echo "$DOCKER_HUB_PASSWORD" | docker login -u "DOCKER_HUB_ID" --passowrd-stdin
 
-  - docker push sns-client
-  - docker push sns-server
-  - docker push sns-nginx
+  - docker push dudckd/sns-client
+  - docker push dudckd/sns-server
+  - docker push dudckd/sns-nginx
 
-  - echo "success deply"
+  - echo "success deploy"
