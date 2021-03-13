@@ -10,3 +10,16 @@ before_install:
 
 script:
   - docker run -e CI=true dudckd/docker-test npm run test -- --coverage
+
+after_success:
+  - docker build -t dudckd/sns-client ./client
+  - docker build -t dudckd/sns-server ./server
+  - docker build -t dudckd/sns-nignx ./nginx
+
+  - echo "$DOCKER_HUB_PASSWORD" | docker login -u "DOCKER_HUB_ID" --passowrd-stdin
+
+  - docker push dudckd/sns-client
+  - docker push dudckd/sns-server
+  - docker push dudckd/sns-nginx
+
+  - echo "success deploy"
