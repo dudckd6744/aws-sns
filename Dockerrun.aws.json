@@ -7,7 +7,12 @@
             "hostname": "client",
             "essential": false,
             "cpu":1,
-            "memory": 128
+            "memory": 128,
+            "command": [
+                "tail",
+                "-f",
+                "/bin/bash"
+            ]
         },
         {
             "name": "server",
@@ -15,7 +20,12 @@
             "hostname": "server",
             "essential": false,
             "cpu":1,
-            "memory": 128
+            "memory": 128,
+            "command": [
+                "tail",
+                "-f",
+                "/bin/bash"
+            ]
         },
         {
             "name": "nginx",
@@ -30,7 +40,12 @@
                 }
             ],
             "links": ["client", "server"],
-            "memory": 128
+            "memory": 128,
+            "command": [
+                "tail",
+                "-f",
+                "/bin/bash"
+            ]
         }
     ]
 }
