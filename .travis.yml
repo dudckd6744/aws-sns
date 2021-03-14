@@ -11,25 +11,25 @@ before_install:
 script:
   - docker run -e CI=true dudckd/docker-test npm run test -- --coverage
 
-after_success:
-  - docker build -t dudckd/sns-client ./client
-  - docker build -t dudckd/sns-server ./server
-  - docker build -t dudckd/sns-nginx ./nginx
+# after_success:
+#   - docker build -t dudckd/sns-client ./client
+#   - docker build -t dudckd/sns-server ./server
+#   - docker build -t dudckd/sns-nginx ./nginx
 
-  - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
+#   - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
 
-  - docker push dudckd/sns-client
-  - docker push dudckd/sns-server
-  - docker push dudckd/sns-nginx
+#   - docker push dudckd/sns-client
+#   - docker push dudckd/sns-server
+#   - docker push dudckd/sns-nginx
 
 deploy:
   edge: true
   provider: elasticbeanstalk
-  region: "ap-northeast-2"
-  app: "sns-docker-aws"
-  env: "Snsdockeraws-env"
-  bucket_name: "elasticbeanstalk-ap-northeast-2-840213432037"
-  bucket_path: "sns-docker-aws"
+  region: ap-northeast-2
+  app: sns-docker-aws
+  env: Snsdockeraws-env
+  bucket_name: elasticbeanstalk-ap-northeast-2-840213432037
+  bucket_path: sns-docker-aws
   on:
     branch: main
   

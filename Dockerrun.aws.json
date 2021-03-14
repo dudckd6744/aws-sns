@@ -6,6 +6,7 @@
             "image": "dudckd/sns-client",
             "hostname": "client",
             "essential": false,
+            "cpu":1,
             "memory": 128
         },
         {
@@ -13,6 +14,7 @@
             "image": "dudckd/sns-server",
             "hostname": "server",
             "essential": false,
+            "cpu":1,
             "memory": 128
         },
         {
@@ -20,6 +22,7 @@
             "image": "dudckd/sns-nginx",
             "hostname": "nginx",
             "essential": true,
+            "cpu":1,
             "portMappings": [
                 {
                     "hostPort": 80,
