@@ -20,16 +20,16 @@ script:
 
 #   - docker push dudckd/sns-client
 #   - docker push dudckd/sns-server
-#   - docker push dudckd/sns-nginx
+#   - docker push dudckd/sns-nginx s
 
 deploy:
   edge: true
   provider: elasticbeanstalk
   region: ap-northeast-2
-  app: sns-docker-aws
-  env: Snsdockeraws-env
+  app: aws-sns
+  env: Awssns-env
   bucket_name: elasticbeanstalk-ap-northeast-2-840213432037
-  bucket_path: sns-docker-aws
+  bucket_path: aws-sns
   on:
     branch: main
   
